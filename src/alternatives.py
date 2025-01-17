@@ -137,37 +137,44 @@ def build_numerical_matrix(alternatives, values, direction, scale_param):
 
     for i in range(n):
         for j in range(i+1, n):
-            if values[i] == 0 or values[j] == 0:
-                better_by_ratio = 9
-            else:
-                better_by_ratio = max(values[i], values[j]) / min(values[i], values[j])
-
-            raw_intensity = 9 * (better_by_ratio / scale_param)
-            if raw_intensity < 1:
+            if abs(values[i] - values[j]) < 1e-9:
+                better_by_ratio = 1
                 intensity = 1
-            elif raw_intensity > 9:
-                intensity = 9
+                better = "Neither"
+                matrix[i, j] = 1
+                matrix[j, i] = 1
             else:
-                intensity = int(round(raw_intensity))
+                if values[i] == 0 or values[j] == 0:
+                    better_by_ratio = 9
+                else:
+                    better_by_ratio = max(values[i], values[j]) / min(values[i], values[j])
 
-            if direction == "larger":
-                if values[i] >= values[j]:
-                    better = alternatives[i]
-                    matrix[i, j] = intensity
-                    matrix[j, i] = 1 / intensity
+                raw_intensity = 9 * (better_by_ratio / scale_param)
+                if raw_intensity < 1:
+                    intensity = 1
+                elif raw_intensity > 9:
+                    intensity = 9
                 else:
-                    better = alternatives[j]
-                    matrix[j, i] = intensity
-                    matrix[i, j] = 1 / intensity
-            else:  # 'smaller'
-                if values[i] <= values[j]:
-                    better = alternatives[i]
-                    matrix[i, j] = intensity
-                    matrix[j, i] = 1 / intensity
-                else:
-                    better = alternatives[j]
-                    matrix[j, i] = intensity
-                    matrix[i, j] = 1 / intensity
+                    intensity = int(round(raw_intensity))
+
+                if direction == "larger":
+                    if values[i] >= values[j]:
+                        better = alternatives[i]
+                        matrix[i, j] = intensity
+                        matrix[j, i] = 1 / intensity
+                    else:
+                        better = alternatives[j]
+                        matrix[j, i] = intensity
+                        matrix[i, j] = 1 / intensity
+                else:  # 'smaller'
+                    if values[i] <= values[j]:
+                        better = alternatives[i]
+                        matrix[i, j] = intensity
+                        matrix[j, i] = 1 / intensity
+                    else:
+                        better = alternatives[j]
+                        matrix[j, i] = intensity
+                        matrix[i, j] = 1 / intensity
 
             print(f"{alternatives[i]} vs. {alternatives[j]} => {better} is better. Ratio = {better_by_ratio:.2f}, Intensity = {intensity}")
 
