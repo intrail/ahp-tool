@@ -19,18 +19,7 @@ def main():
     │                  / /| | | |__   _| |_| |__   _|                 │
     │                 /___|_| |_|  |_|  \___/   |_|                   │
     │                                                                 │
-    │                          AHP Tool v1.0                          │
-    │                                                                 │
-    │ Developed as part of the module 'ESD200 Sustainability Methods  │
-    │ and Metrics" at the Centre for Sustainable Development.         │
-    │                                                                 │
-    │ Special thanks to Dr André Cabrera Serrenho for his inspiring   │
-    │ lectures and knowledge shared in the module.                    │
-    │                                                                 │
-    │ With sincere gratitude to Dr Dai Morgan for his invaluable      │
-    │ guidance and academic support.                                  │
-    │                                                                 │
-    │ Any errors or inaccuracies are solely my responsibility.        │
+    │                          AHP Tool v1.1                          │
     │                                                                 │
     └─────────────────────────────────────────────────────────────────┘
     """)
