@@ -132,12 +132,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## Acknowledgments
-
-This tool was inspired by lectures on the **Analytic Hierarchy Process (AHP)** in the module *ESD200 Sustainability Methods and Metrics* at Centre for Sustainable Development, University of Cambridge. 
-
-Special thanks to:
-- **Dr André Cabrera Serrenho** for his inspiring lectures and knowledge shared in the module.
-- **Dr Dai Morgan** for his invaluable guidance and academic support.
-
----
