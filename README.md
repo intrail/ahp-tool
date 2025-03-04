@@ -40,7 +40,7 @@ Follow these steps to get started with the AHP Tool:
 
 ### 1. Clone or Download the Repository
 ```bash
-git clone https://github.com/intrail/ahp-tool.git
+git clone https://github.com/intrail/ahp-tool
 cd ahp-tool
 ```
 
@@ -53,7 +53,7 @@ pip install -r requirements.txt
 ### 3. Run the Tool
 #### Option 1: Run via Python
 ```bash
-python AHP_Tool.py
+python ./AHP_Tool.py
 ```
 
 #### Option 2: Double-Click
